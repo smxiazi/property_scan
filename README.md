@@ -16,7 +16,7 @@
 
 <img width="1441" alt="image" src="https://github.com/user-attachments/assets/21ab41f4-d284-4d68-9291-535b3572f41c">
 
-* 添加本次要收集的根域名，如：baidu.com 
+* 添加本次要收集的根域名，如：baidu.com （可填写多个根域名）
 
 <img width="621" alt="image" src="https://github.com/user-attachments/assets/a29e7273-7e0e-47c6-b7e3-c7ecd7052d28">
 
