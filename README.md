@@ -28,6 +28,16 @@
 
 <img width="779" alt="image" src="https://github.com/user-attachments/assets/78eba0eb-5ffc-4be7-b1dc-07748ee7ad9d">
 
+* 也可以随时下载xlsx文档,里面将会显示当前任务最新完成情况
+
+<img width="1618" alt="image" src="https://github.com/user-attachments/assets/0e6e1676-e1e6-4502-906f-ab31b2b43d33">
+
+
+<img width="1358" alt="image" src="https://github.com/user-attachments/assets/c5d1c2fd-50d0-414b-bc83-5b9868639568">
+
+<img width="722" alt="image" src="https://github.com/user-attachments/assets/18087413-d955-49cd-b6b4-18ea183713b3">
+
+
 
 
 
