@@ -26,7 +26,8 @@
 
 * 可以点击 查看运行任务 查看当前任务进度
 
-<img width="779" alt="image" src="https://github.com/user-attachments/assets/78eba0eb-5ffc-4be7-b1dc-07748ee7ad9d">
+<img width="847" alt="image" src="https://github.com/user-attachments/assets/1d009d23-8d4c-46cc-a3c9-92d9a1ebd213">
+
 
 * 也可以随时下载xlsx文档,里面将会显示当前任务最新完成情况
 
