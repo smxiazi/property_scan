@@ -25,7 +25,7 @@
 * 程序会自动处理用户输入的资产信息，进行分类、去重等操作，所以不用担心资产会重复，不小心多次点击了提交相同资产也无所谓。
 
 ### 0x02 使用方法
-* 运行 main.py 打开对应的8000端口,默认账号密码admin:admin123登录(记得把弱口令修改了 xdm)
+* 运行 main.py 打开对应的8000端口,默认账号密码admin:admin123登录  (记得把弱口令修改了 xdm)
   
 <img width="863" alt="image" src="https://github.com/user-attachments/assets/7e5f28b6-26ee-4306-87bf-da134e61c676">
 
