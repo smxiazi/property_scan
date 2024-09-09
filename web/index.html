@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>资产测绘平台</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+
+
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+  </div>
+
+    <blockquote class="layui-elem-quote" style="margin-top: 30px;">
+    <div class="layui-text">
+      <ul>
+        <li>资产测绘平台-算命縖子  版本：1.1 </li>
+      </ul>
+    </div>
+  </blockquote>
+
+  <div class="layui-btn-container">
+    <a href="/download" class="layui-btn" target="_blank">下载 xlsx 文档</a>
+    <a href="/log.html" class="layui-btn" target="_blank">点击查看运行日志</a>
+  </div>
+
+
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+  </div>
+
+  <div class="layui-container">
+    <table class="layui-table" lay-even>
+    <colgroup>
+      <col width="150">
+      <col width="150">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>根域名</th>
+      </tr> 
+    </thead>
+    <tbody>
+#####
+    </tbody>
+  </table>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-group">
+      <div class="layui-input-split layui-input-prefix">
+        添加根域名
+      </div>
+      <input type="text" placeholder="baidu.com" class="layui-input" id="domainInput">
+      <div class="layui-input-suffix">
+        <button class="layui-btn layui-btn-primary" onclick="sendDataToAPI()">添加</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+  </div>
+
+  <div class="layui-form">
+      <blockquote class="layui-elem-quote" style="margin-top: 30px;">
+    <div class="layui-text">
+      <ul>
+        <li>请输入要扫描的资产（子域名、url、ip等信息） 每行一个,会自动去重。</li>
+      </ul>
+    </div>
+  </blockquote>
+
+  <form id="all_data"> 
+  <textarea id="dataInput" name="data" placeholder="http://www.baidu.com
+https://www.baidu.com:8899
+abc.baidu.com
+114.114.114.114
+https://114.114.114.114" class="layui-textarea"></textarea>
+  </div>
+  </br>
+  <div class="layui-btn-container">
+    <button type="button" class="layui-btn" onclick="submitData()">提交</button>
+  </div>
+  </form>
+
+
+</div>
+
+<script>  
+function sendDataToAPI() {  
+  // 获取input元素的值  
+  var domain = document.getElementById('domainInput').value;  
+  
+  // 检查是否有输入  
+  if (!domain) {  
+    alert('请输入根域名！');  
+    return;  
+  }  
+  
+  // 使用fetch API发送POST请求  
+  fetch('/api_root_domain', {  
+    method: 'POST', // 或者GET，取决于你的API要求  
+    headers: {  
+      'Content-Type': 'application/json', // 设置请求头，通常POST请求需要指定发送内容的类型  
+    },  
+    body: JSON.stringify({ // 将对象转换为JSON字符串  
+      domain: domain  
+    }),  
+  })  
+  .then(response => response.text()) // 或者 response.json()，取决于服务器的响应类型  
+  .then(data => {  
+    console.log('Success:', data); // 处理服务器返回的数据  
+    alert(data); // 提示用户
+    location.reload()
+  })  
+  .catch((error) => {  
+    console.error('Error:', error); // 处理错误  
+    alert('添加根域名失败，请重试！'); // 提示用户  
+  });  
+}
+
+function submitData() {  
+  // 获取 textarea 的值  
+  var dataInput = document.getElementById('dataInput');  
+  var data = dataInput.value;  
+  
+  // 判断 textarea 是否为空  
+  if (data.trim() === '') {  
+    alert('请输入数据！');  
+    return; // 如果为空，则停止执行后续代码  
+  }  
+  
+  // 使用 fetch 发送 POST 请求  
+  fetch('/add_data', {  
+    method: 'POST', // 或者 'GET'，但通常用于提交数据的是 POST  
+    headers: {  
+      'Content-Type': 'application/json', // 或者 'application/json'，取决于服务器期望的格式  
+    },  
+    body: JSON.stringify({ // 将对象转换为JSON字符串  
+      data: data  
+    }),
+  })
+  .then(response => response.text()) // 或者 response.json()，取决于服务器的响应类型  
+  .then(data => {  
+    console.log('Success:', data);  
+    alert(data); // 提示用户
+  })  
+  .catch((error) => {  
+    console.error('Error:', error);  
+    alert('添加失败，请重试！'); // 提示用户
+
+  });  
+}
+</script>
+
+<!-- body 末尾处引入 layui -->
+<script src="layui/layui.js"></script>
+</body>
+</html>
