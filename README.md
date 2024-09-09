@@ -39,6 +39,10 @@
 
 <img width="722" alt="image" src="https://github.com/user-attachments/assets/18087413-d955-49cd-b6b4-18ea183713b3">
 
+* 当任务显示 全部完成 即可去下载 xlsx文档，获取跑完任务的完整版
+
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/783339f1-d0bc-49d4-8e20-015e66ff2f17">
+
 
 
 
