@@ -578,7 +578,7 @@ def go_run():
                 xlsx_save(data_ip, 3)
             old_count[2] = old_count[2]+1
             end_time = time.time()  # 结束时候
-            all_time_list[2] = all_time_list[1] + (end_time - start_time)#使用时间累计
+            all_time_list[2] = all_time_list[2] + (end_time - start_time)#使用时间累计
             print_data.append(["ip数量：",new_count[2],"目前处理的进度是：",old_count[2]])
         else:
             if old_count[2] == new_count[2]:
